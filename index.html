@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Piskel-clone</title>
+    <link rel="icon" href="img/logo.png">
+    </head>
+<body>
+  <div class="header-wrap">
+    <div class="navigation">
+       <span class="bars"><i class="fa fa-bars"></i></span> <span class="task-name">Piskel-clone</span><span class="ellipsis"><i class="fas fa-ellipsis-v"></i></span>
+       <div class="signin"><button id="authorize_button" style="display: none;"><img src="./img/google.png">Login</button>
+        <button id="signout_button" style="display: none;"><img src="./img/google.png">Sign Out</button></div>
+    </div>
+  </div>
+    <div class="main-wrapper">
+      <div class="canvas-wrapper" id="canvasContainer">
+        <canvas class="editor" id="1" data-framePosition="1" width="480" height="480"></canvas>
+      </div>
+      <div class="left-section">
+          <div class="left-section-wrapper">
+              <ul class="tools-wrapper">
+                  <li class="tool tool-pen" id="pen" title="Pen Tool(P)"></li>
+                  <li class="tool tool-colorswap" id="colorswap" title="Paint all Pixels of the same color(A)"></li>
+                  <li class="tool tool-bucket" id="bucket" title="Paint Bucket Tool(B)"></li>
+                  <li class="tool tool-picker" id="picker" title="Color Picker(O)"></li>
+                  <li class="tool tool-eraser" id='eraser' title="Eraser Tool(E)"></li>
+                  <li class="tool tool-lighten" id="lighten" title="Lighten(U)"></li>
+                  <li class="tool tool-mirror" id="mirror" title="Mirror Pen(V)"></li>
+                <li class="colorPallete" title="Primary - left mouse button"><input type="color" id="firstColor" value="#000000"></li>
+                <li class="colorPallete" title="Secondary - right mouse button"><input type="color" id="secondColor" value="#ffffff"></li>
+                  </div>
+              </ul>
+            </div>
+            </div>
+            <div class="right-section">
+              <div class="rigtht-section-wrapper">
+                <ul class="tools-wrapper">
+                    <li class="tool tool-dithering" id="dither" title="Dithering Tool(T)"></li>
+                    <div class="dropup">
+                      <button class="dropbtn"></button>
+                      <div class="dropup-content">
+                          <button id='gifSaveBtn' type="button"><a id="downloadAsGif" download="imageGif.gif">Save as .gif</a></button>
+                          <button id='piskelSaveBtn' type="button"><a id="downloadAsPiskel" download="imagePiskel.piskel">Save as .piskel</a></button>
+                          <button id='apngSaveBtn' type="button">Save as .apng</button>
+                          <button id='GSaveApng' type="button">Save as .apng to <img src="img/Google-Drive-icon.png"></button>
+                          <button id='GSaveGif' type="button">Save as .gif to <img src="img/Google-Drive-icon.png"></button>
+                          <button id='GiphySaveGif' type="button">Save gif to Giphy</button>
+                      </div>
+                </ul>
+              </div>
+            </div>
+            <div class="preview-wrapper">
+                <ul class="preview-list-container" id=previewList>
+                  <li class="preview-item-add" id="addFrame">Add Frame +</li>
+                  <li class="preview-item" draggable="true" id="preview1" data-previewposition="1"><div class="buttons"><button class="buttonClone"><img src="img/frame-duplicate.png"></button></div><canvas class="outputGif"></canvas></li>
+                </ul>
+              </div>
+            <div class="animation-wrapper" id="animation1">
+              <div class="animation" id="animation"></div>
+                    </div>
+                    <div class="values">
+                      <input id='fps' type="range" min="1" max="50" step="1" value="1"></input>
+              <output id="rangevalue">FPS:1</output>
+              <button id="full">FullScreen+</button>
+              <label for="pxWidth">Size:</label>
+                    <select id="pxWidth">
+                        <option value="32" selected>32px</option>
+                        <option value="64">64px</option>
+                        <option value="128">128px</option>
+                    </select>
+                    <div class="coords"><p id=mouseCoords></p></div>
+              </div>
+                    </div>
+                    <script src="https://apis.google.com/js/platform.js"></script>
+<script type="text/javascript" src="app.bundle.js"></script></body>
+</html>
